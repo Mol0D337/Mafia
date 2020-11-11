@@ -1,10 +1,18 @@
 <template>
-    $END$
+    <div>
+        <Header/>
+        <Sign/>
+        <Footer/>
+    </div>
 </template>
 
 <script>
+    import Header from "../components/app/Header";
+    import Sign from "../components/app/Sign";
+    import Footer from "../components/app/Footer";
     export default {
-        name: "Profile"
+        name: "Profile",
+        components: {Footer, Sign, Header}
     }
 </script>
 

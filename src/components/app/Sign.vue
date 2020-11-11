@@ -54,7 +54,7 @@
 <style scoped>
     .dws-wrapper {
         font-family: "IBM Plex Sans", sans-serif;
-        background-color: #5F666C;
+        background-color: #686d76;
         display: flex;
         height: 100vh;
         justify-content: center;

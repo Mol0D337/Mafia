@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="bcg">
-            <Header/>
+            <HeaderMainPage/>
         </div>
         <Sign/>
         <Footer/>
@@ -12,9 +12,10 @@
     import Header from "../components/app/Header";
     import Footer from "../components/app/Footer";
     import Sign from "../components/app/Sign";
+    import HeaderMainPage from "../components/app/HeaderMainPage";
     export default {
         name: "Menu",
-        components: {Sign, Footer, Header}
+        components: {HeaderMainPage, Sign, Footer, Header}
     }
 </script>
 
@@ -26,6 +27,5 @@
         background: url("../../public/img/8.png") no-repeat center center;
         background-size: cover;
     }
-
 
 </style>

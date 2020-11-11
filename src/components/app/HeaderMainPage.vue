@@ -75,7 +75,7 @@
 
 <script>
     export default {
-        name: "Header"
+        name: "HeaderMainPage"
     }
 </script>
 
@@ -85,11 +85,11 @@
         justify-content: center;
     }
     .header__items {
-        background-color: #2d4059;
+        /*background-color: #2d4059;*/
         /*background: url("../img/header.png") no-repeat center center;*/
         /*background-image: linear-gradient(30deg,#822cff,#a05fff);*/
         /*background-image: linear-gradient(30deg,#7f7fd5,#86a8e7,#91eae4);*/
-        background-size: cover;
+        /*background-size: cover;*/
         opacity: 95%;
         width: 100vw;
         /*position: fixed;*/

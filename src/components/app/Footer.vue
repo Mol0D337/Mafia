@@ -17,12 +17,14 @@
 
 <style scoped>
     .footer {
+        padding: 25px 0;
         background: #2f363c;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         font-family: "chineserocksrg";
+        border-top: 1px solid #e1eaff;
     }
 
     .footer__left {

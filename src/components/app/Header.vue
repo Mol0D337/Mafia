@@ -88,6 +88,7 @@
     }
     .header__items {
         /*box-shadow: 0 0 100px rgba(0,0,0,.3);*/
+        box-shadow: 0 0 30px rgba(0,0,0,.1);
         /*background-color: #2d4059;*/
         background-color: #30475e;
         /*background: url("../img/header.png") no-repeat center center;*/

@@ -18,6 +18,6 @@
 
 <style scoped>
     div {
-        background-color: #eeeeee;
+        background-color: #f4f4f5;
     }
 </style>

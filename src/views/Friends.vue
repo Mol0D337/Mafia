@@ -17,7 +17,7 @@
 
 <style scoped>
     div {
-        background-color: #eeeeee;
+        background-color: #f4f4f5;
     }
     p {
         margin: 100px;

@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header/>
-            <p>Shop</p>
+            <ShopTabs/>
         <Footer/>
     </div>
 </template>
@@ -9,15 +9,16 @@
 <script>
     import Header from "../components/app/Header";
     import Footer from "../components/app/Footer";
+    import ShopTabs from "../components/app/ShopTabs";
     export default {
         name: "Shop",
-        components: {Footer, Header}
+        components: {ShopTabs, Footer, Header}
     }
 </script>
 
 <style scoped>
     div {
-        background-color: #eeeeee;
+        background-color: #f4f4f5;
     }
     p {
         margin: 100px;

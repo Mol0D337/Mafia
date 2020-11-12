@@ -16,6 +16,9 @@
 </script>
 
 <style scoped>
+    div {
+        background-color: #eeeeee;
+    }
     p {
         margin: 100px;
         font-size: 60px;

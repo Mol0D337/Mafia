@@ -17,5 +17,7 @@
 </script>
 
 <style scoped>
-
+    div {
+        background-color: #eeeeee;
+    }
 </style>

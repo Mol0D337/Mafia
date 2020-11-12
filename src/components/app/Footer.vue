@@ -17,6 +17,7 @@
 
 <style scoped>
     .footer {
+        /*box-shadow: 0 0 100px rgba(0,0,0,.3);*/
         padding: 25px 0;
         background: #2f363c;
         display: flex;

@@ -16,6 +16,10 @@
 </script>
 
 <style scoped>
+    div {
+        max-width: ;
+        background-color: #eeeeee;
+    }
     p {
         margin: 100px;
         font-size: 60px;

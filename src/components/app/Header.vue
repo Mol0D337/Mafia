@@ -1,4 +1,5 @@
 <template>
+
     <div class="header">
         <ul class="header__items">
 
@@ -71,6 +72,7 @@
 
         </ul>
     </div>
+
 </template>
 
 <script>
@@ -85,7 +87,9 @@
         justify-content: center;
     }
     .header__items {
-        background-color: #2d4059;
+        /*box-shadow: 0 0 100px rgba(0,0,0,.3);*/
+        /*background-color: #2d4059;*/
+        background-color: #30475e;
         /*background: url("../img/header.png") no-repeat center center;*/
         /*background-image: linear-gradient(30deg,#822cff,#a05fff);*/
         /*background-image: linear-gradient(30deg,#7f7fd5,#86a8e7,#91eae4);*/
@@ -108,7 +112,7 @@
     }
     .header__items li a {
         text-decoration: none;
-        color: #fffdff;
+        color: #e5e5e5;
         font-weight: 700;
     }
     .header__items li a:hover {

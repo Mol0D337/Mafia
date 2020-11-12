@@ -1,4 +1,5 @@
 <template>
+    <div class="bcg">
     <div class="header">
         <ul class="header__items">
 
@@ -71,6 +72,7 @@
 
         </ul>
     </div>
+    </div>
 </template>
 
 <script>
@@ -80,6 +82,12 @@
 </script>
 
 <style scoped>
+    .bcg {
+        width: 100vw;
+        height: 100vh;
+        background: url("../../../public/img/8.png") no-repeat center center;
+        background-size: cover;
+    }
     .header{
         display: flex;
         justify-content: center;

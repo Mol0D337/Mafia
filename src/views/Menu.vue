@@ -1,8 +1,6 @@
 <template>
     <div>
-        <div class="bcg">
-            <HeaderMainPage/>
-        </div>
+        <HeaderMainPage/>
         <Sign/>
         <Footer/>
     </div>
@@ -21,11 +19,6 @@
 
 <style scoped>
 
-    .bcg {
-        width: 100vw;
-        height: 100vh;
-        background: url("../../public/img/8.png") no-repeat center center;
-        background-size: cover;
-    }
+
 
 </style>

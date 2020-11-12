@@ -127,6 +127,7 @@
         border-radius: 5px;
         background-color: #fff;
         border-bottom: 2px solid #e6e6e6;
+        box-shadow: 0 0 30px rgba(0,0,0,.1);
         /*background: linear-gradient(180deg, #6c7174,#60686b,#5f605a ,#56534c,#302e22);*/
         min-width: 320px;
         max-width: 800px;
@@ -150,20 +151,20 @@
     .tabs>label {
         margin-left: 20px;
         display: inline-block;
-        padding: 6px 0;
+        padding: 12px 0 7px;
         font-weight: 500;
         text-align: center;
-        color: #e9f2f9;
+        color: #5b5d67;
     }
     /* Изменения стиля переключателей вкладок при наведении */
 
     .tabs>label:hover {
-        border-bottom: 3px solid #fff;
+        border-bottom: 3px solid #2f363c;
         cursor: pointer;
     }
     /* Стили для активной вкладки */
     .tabs>input:checked+label {
-        border-bottom: 3px solid #fff;
+        border-bottom: 3px solid #2f363c;
     }
     /* Активация секций с помощью псевдокласса :checked */
     #tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4 {
@@ -183,7 +184,7 @@
     .name__item {
         font-family: 'IBM Plex Sans', sans-serif;
         font-weight: 500;
-        color: #c2bfba;
+        color: #5b5d67;
     }
     .price {
         font-family: 'IBM Plex Sans', sans-serif;

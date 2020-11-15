@@ -1,10 +1,7 @@
 <template>
     <div>
         <Header/>
-            <p>profile</p>
-            <a href="#" @click.prevent="logout">
-                11111
-            </a>
+            <Sign/>
         <Footer/>
     </div>
 </template>
@@ -14,14 +11,8 @@
     import Sign from "../components/app/Sign";
     import Footer from "../components/app/Footer";
     export default {
-        methods: {
-          logout() {
-              console.log('logout')
-              this.$router.push('/entry?message=logout')
-          }
-        },
-        name: "Profile",
-        components: {Footer,Header}
+        name: "ProfileLogin",
+        components: {Footer, Sign, Header}
     }
 </script>
 

@@ -64,7 +64,7 @@
             <router-link
                     tag="li"
                     class="header__item-right"
-                    to="/profile"
+                    to="/entry"
                     active-class="active"
             >
                 <a class="items" href="#">ПРОФИЛЬ</a>

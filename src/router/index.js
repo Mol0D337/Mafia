@@ -42,6 +42,11 @@ export default new VueRouter({
       name: 'profile',
       component: () => import('../views/Profile.vue')
     },
+    {
+      path: '/entry',
+      name: 'entry',
+      component: () => import('../views/ProfileLogin.vue')
+    },
   ]
 })
 

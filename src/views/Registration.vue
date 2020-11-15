@@ -31,7 +31,7 @@
 
                 <div class="error" v-if="!$v.nickName.required">Nick Name is required</div>
 
-                <p class="typo__p" v-if="Status === 'ERROR'">Please fill the form correctly.</p>
+                <p class="typo__p" v-if="status === 'ERROR'">Please fill the form correctly.</p>
 
         <button class="button" type="submit">ЗАРЕГЕСТРИРОВАТЬСЯ!</button>
 
@@ -45,18 +45,22 @@
     export default {
         name: "Registration",
         methods: {
-            submit() {
+            async submit() {
                 this.$v.$touch()
                 if (this.$v.$invalid) {
-                    this.Status = 'ERROR'
+                    this.status = 'ERROR'
                 } else {
                     const formData = {
                         email: this.email,
                         password: this.password,
                         nickName: this.nickName
                     }
-                    console.log(formData),
-                    this.$router.push('/')
+                    try {
+                        await this.$store.dispatch('register', formData)
+                        this.$router.push('/')
+                    } catch (e) {
+                        console.log(e)
+                    }
                 }
             }
         },
@@ -65,7 +69,8 @@
                 email: '',
                 password: '',
                 repeatPassword: '',
-                nickName: ''
+                nickName: '',
+                status: null
             }
         },
         validations: {

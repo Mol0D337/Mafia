@@ -15,8 +15,8 @@
     import Footer from "../components/app/Footer";
     export default {
         methods: {
-          logout() {
-              console.log('logout')
+          async logout() {
+              await this.$store.dispatch('logout')
               this.$router.push('/entry')
           }
         },

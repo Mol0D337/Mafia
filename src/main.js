@@ -4,13 +4,14 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-
+import Loader from '@/components/app/Loader'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
 
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
+Vue.component('Loader', Loader)
 
 firebase.initializeApp ({
   apiKey: "AIzaSyA9_egP5H-Wq7ZBbtDkMAcfYpXg6tc2Ri0",

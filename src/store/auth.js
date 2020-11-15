@@ -14,19 +14,22 @@ export default {
                 await firebase.auth().createUserWithEmailAndPassword( email, password,)
                 const uid = await dispatch('getuid')
                 await firebase.database().ref(`/users/${uid}/info`).set({
-                    name: nickName
+                    name: nickName,
+                    email,
+                    password
                 })
             } catch (e) {
                 throw e
             }
         },
-        async getuid() {
-            const user = await firebase.auth().currentUser
+        getuid() {
+            const user = firebase.auth().currentUser
             console.log(user, "user");
             return user ? user.uid : null
         },
-        async logout() {
+        async logout({commit}) {
             await firebase.auth().signOut()
+            commit('clearInfo')
         }
     }
 }

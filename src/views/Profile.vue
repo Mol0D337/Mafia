@@ -17,7 +17,7 @@
         methods: {
           logout() {
               console.log('logout')
-              this.$router.push('/entry?message=logout')
+              this.$router.push('/entry')
           }
         },
         name: "Profile",

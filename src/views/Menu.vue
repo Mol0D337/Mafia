@@ -1,7 +1,6 @@
 <template>
     <div>
         <HeaderMainPage/>
-        <Sign/>
         <Footer/>
     </div>
 </template>

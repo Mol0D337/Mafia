@@ -2,7 +2,7 @@
     <div id="content-tab2" >
         <p>
 
-            <form class="inner" @submit.prevent="onSubmit">
+            <form class="inner" @submit.prevent="submit">
 
                 <div class="form-group" :class="{ 'form-group--error': $v.email.$error }">
                     <label class="form__label">Email</label>
@@ -31,7 +31,7 @@
 
                 <div class="error" v-if="!$v.nickName.required">Nick Name is required</div>
 
-        <p class="typo__p" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
+                <p class="typo__p" v-if="status === 'ERROR'">Please fill the form correctly.</p>
 
         <button class="button" type="submit">ЗАРЕГЕСТРИРОВАТЬСЯ!</button>
 
@@ -45,12 +45,22 @@
     export default {
         name: "Registration",
         methods: {
-            onSubmit() {
+            async submit() {
                 this.$v.$touch()
                 if (this.$v.$invalid) {
-                    this.submitStatus = 'ERROR'
+                    this.status = 'ERROR'
                 } else {
-                    this.$router.push('/play')
+                    const formData = {
+                        email: this.email,
+                        password: this.password,
+                        nickName: this.nickName
+                    }
+                    try {
+                        await this.$store.dispatch('register', formData)
+                        this.$router.push('/')
+                    } catch (e) {
+                        console.log(e)
+                    }
                 }
             }
         },
@@ -59,7 +69,8 @@
                 email: '',
                 password: '',
                 repeatPassword: '',
-                nickName: ''
+                nickName: '',
+                status: null
             }
         },
         validations: {

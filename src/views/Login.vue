@@ -31,7 +31,7 @@
     export default {
         name: "Login",
         methods: {
-            submit() {
+            async submit() {
                 this.$v.$touch()
                 if (this.$v.$invalid) {
                     this.submitStatus = 'ERROR'
@@ -40,8 +40,12 @@
                         email: this.email,
                         password: this.password
                     }
-                    this.$router.push('/'),
-                    console.log(formData)
+                    try {
+                        await this.$store.dispatch('login', formData)
+                        this.$router.push('/')
+                    } catch (e) {
+                        alert('Такого пользователя нет')
+                    }
                 }
             },
         },

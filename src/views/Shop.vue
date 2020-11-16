@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="bcg">
         <Header/>
-            <ShopTabs/>
+            <p>Shop</p>
         <Footer/>
     </div>
 </template>
@@ -17,8 +17,10 @@
 </script>
 
 <style scoped>
-    div {
+    .bcg {
         background-color: #f4f4f5;
+        width: 100%;
+        height: 100%;
     }
     p {
         margin: 100px;

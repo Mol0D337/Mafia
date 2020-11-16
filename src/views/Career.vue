@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bcg">
         <Header/>
             <p>Career</p>
         <Footer/>
@@ -9,15 +9,18 @@
 <script>
     import Header from "../components/app/Header";
     import Footer from "../components/app/Footer";
+    import ShopTabs from "../components/app/ShopTabs";
     export default {
         name: "Career",
-        components: {Footer, Header}
+        components: {ShopTabs, Footer, Header}
     }
 </script>
 
 <style scoped>
-    div {
+    .bcg {
         background-color: #f4f4f5;
+        width: 100%;
+        height: 100%;
     }
     p {
         margin: 100px;

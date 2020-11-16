@@ -29,5 +29,6 @@
         background-color: #f4f4f5;
         width: 100%;
         height: 100%;
+
     }
 </style>

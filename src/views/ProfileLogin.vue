@@ -27,7 +27,7 @@
     }
     .bcg {
         background-color: #f4f4f5;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
     }
 </style>

@@ -144,14 +144,9 @@
         width: 283px;
         height: 35px;
         padding: 0 12px;
-        font-family: "IBM Plex Sans", sans-serif;
         font-weight: 500;
         font-size: 16px;
 
-    }
-    .form__input:focus {
-        border-color: #3bafda;
-        border-bottom: 1px solid #3bafda;
     }
     .form__label {
         color: #5b5d67;

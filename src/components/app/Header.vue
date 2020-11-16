@@ -10,7 +10,7 @@
                     exact=""
                     active-class="active"
             >
-                <a class="items" href="#">МЕНЮ</a>
+                МЕНЮ
             </router-link>
 
             <router-link
@@ -19,7 +19,7 @@
                     to="/friends"
                     active-class="active"
             >
-                <a class="items" href="#">ДРУЗЬЯ</a>
+                ДРУЗЬЯ
             </router-link>
 
             <router-link
@@ -28,7 +28,7 @@
                     to="/collection"
                     active-class="active"
             >
-                <a class="items" href="#">КОЛЛЕКЦИЯ</a>
+                КОЛЛЕКЦИЯ
             </router-link>
 
 
@@ -49,7 +49,7 @@
                     to="/shop"
                     active-class="active"
             >
-                <a class="items" href="#">МАГАЗИН</a>
+                МАГАЗИН
             </router-link>
 
             <router-link
@@ -58,16 +58,16 @@
                     to="/career"
                     active-class="active"
             >
-                <a class="items" href="#">КАРЬЕРА</a>
+                КАРЬЕРА
             </router-link>
 
             <router-link
                     tag="li"
                     class="header__item-right"
-                    to="/entry"
+                    to="/profile"
                     active-class="active"
             >
-                <a class="items" href="#">ПРОФИЛЬ</a>
+                ПРОФИЛЬ
             </router-link>
 
         </ul>
@@ -87,6 +87,10 @@
         justify-content: center;
     }
     .header__items {
+        text-decoration: none;
+        color: #fffdff;
+        font-weight: 700;
+        cursor: pointer;
         /*box-shadow: 0 0 100px rgba(0,0,0,.3);*/
         box-shadow: 0 0 30px rgba(0,0,0,.1);
         /*background-color: #2d4059;*/

@@ -10,7 +10,7 @@
                     exact=""
                     active-class="active"
             >
-                <a class="items" href="#">МЕНЮ</a>
+                МЕНЮ
             </router-link>
 
             <router-link
@@ -19,7 +19,7 @@
                     to="/friends"
                     active-class="active"
             >
-                <a class="items" href="#">ДРУЗЬЯ</a>
+                ДРУЗЬЯ
             </router-link>
 
             <router-link
@@ -28,7 +28,7 @@
                     to="/collection"
                     active-class="active"
             >
-                <a class="items" href="#">КОЛЛЕКЦИЯ</a>
+                КОЛЛЕКЦИЯ
             </router-link>
 
 
@@ -49,7 +49,7 @@
                     to="/shop"
                     active-class="active"
             >
-                <a class="items" href="#">МАГАЗИН</a>
+                МАГАЗИН
             </router-link>
 
             <router-link
@@ -58,16 +58,16 @@
                     to="/career"
                     active-class="active"
             >
-                <a class="items" href="#">КАРЬЕРА</a>
+                КАРЬЕРА
             </router-link>
 
             <router-link
                     tag="li"
                     class="header__item-right"
-                    to="/entry"
+                    to="/profile"
                     active-class="active"
             >
-                <a class="items" href="#">ПРОФИЛЬ</a>
+                ПРОФИЛЬ
             </router-link>
 
         </ul>
@@ -77,7 +77,17 @@
 
 <script>
     export default {
-        name: "HeaderMainPage"
+        name: "HeaderMainPage",
+        methods: {
+            async logout() {
+                const userAuth = localStorage.getItem('userAuth');
+                if (userAuth === "yes") {
+                    next('/profile')
+                } else {
+                    next('/entry')
+                }
+            }
+        },
     }
 </script>
 
@@ -93,6 +103,10 @@
         justify-content: center;
     }
     .header__items {
+        text-decoration: none;
+        color: #fffdff;
+        font-weight: 700;
+        cursor: pointer;
         /*background-color: #2d4059;*/
         /*background: url("../img/header.png") no-repeat center center;*/
         /*background-image: linear-gradient(30deg,#822cff,#a05fff);*/

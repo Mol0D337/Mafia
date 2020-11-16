@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bcg">
         <Header/>
             <Sign/>
         <Footer/>
@@ -12,12 +12,22 @@
     import Footer from "../components/app/Footer";
     export default {
         name: "ProfileLogin",
-        components: {Footer, Sign, Header}
+        components: {Footer, Sign, Header},
+
     }
 </script>
 
 <style scoped>
-    div {
+    .loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    .bcg {
         background-color: #f4f4f5;
+        width: 100%;
+        height: 100%;
     }
 </style>

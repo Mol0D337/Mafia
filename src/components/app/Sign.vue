@@ -36,7 +36,7 @@
         box-shadow: 0 0 30px rgba(0,0,0,.1);
         /*background: linear-gradient(180deg, #6c7174,#60686b,#5f605a ,#56534c,#302e22);*/
         min-width: 320px;
-        max-width: 500px;
+        max-width: 375px;
         padding: 0;
         margin: 200px auto;
         font-family: 'IBM Plex Sans', sans-serif;

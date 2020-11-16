@@ -40,12 +40,20 @@ export default new VueRouter({
     {
       path: '/profile',
       name: 'profile',
-      component: () => import('../views/Profile.vue')
+      component: () => import('../views/Profile.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "yes") {
+          next()
+        } else {
+          next('/entry')
+        }
+      }
     },
     {
       path: '/entry',
       name: 'entry',
-      component: () => import('../views/ProfileLogin.vue')
+      component: () => import('../views/ProfileLogin.vue'),
     },
   ]
 })

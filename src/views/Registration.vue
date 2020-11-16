@@ -58,6 +58,7 @@
                     try {
                         await this.$store.dispatch('register', formData)
                         this.$router.push('/')
+                        localStorage.setItem('userAuth', 'yes');
                     } catch (e) {
                         console.log(e)
                     }

@@ -43,6 +43,7 @@
                     try {
                         await this.$store.dispatch('login', formData)
                         this.$router.push('/')
+                        localStorage.setItem('userAuth', 'yes');
                     } catch (e) {
                         alert('Такого пользователя нет')
                     }

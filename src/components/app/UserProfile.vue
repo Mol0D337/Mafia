@@ -12,18 +12,18 @@
 
 
         <div id="content-tab1">
-            <p>
+
             <div class="profile">
                 <div class="avatar">
                     <div class="img"></div>
                 </div>
                 <div class="nickname">{{name}}</div>
             </div>
-            </p>
+
         </div>
 
         <div id="content-tab2">
-            <p>
+
             <div class="setting">
                 <div class="avatar">
                     <div class="img"></div>
@@ -31,19 +31,27 @@
 
             <div class="fix__name">
                 <input type="text" :value="name" >
-                <button >Изменить Никk</button>
+                <button @click.prevent="fixname">Изменить Ник</button>
             </div>
 
             <div class="fix__name">
-                <input type="text" :value="email" >
-                <button >Изменить Email</button>
+                <input type="email" :value="email" >
+                <button @click.prevent="fixemail">Изменить Email</button>
             </div>
+
+            <div class="fix__name">
+                <input type="password" :value="password" >
+                <button @click.prevent="fixpassword">Изменить Пароль</button>
             </div>
 
+        </div>
 
 
 
-            </p>
+
+
+
+
         </div>
 
         <div id="content-tab3">
@@ -66,6 +74,9 @@
             },
             email() {
                 return this.$store.getters.info.email
+            },
+            password() {
+                return this.$store.getters.info.password
             }
         },
     }

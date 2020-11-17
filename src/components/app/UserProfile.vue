@@ -31,7 +31,7 @@
 
             <div class="fix__name">
                 <input type="text" :value="name" >
-                <button >Изменить Ник</button>
+                <button >Изменить Никk</button>
             </div>
 
             <div class="fix__name">

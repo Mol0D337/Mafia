@@ -30,6 +30,21 @@ export default {
             await firebase.auth().signOut()
             commit('clearInfo')
         },
+
+        async updateCategory({commit, dispatch}, {name}) {
+            const uid = await dispatch('getuid')
+            await firebase.database().ref(`/users/${uid}/info/name`).child(name).update(name)
+        },
+
+        async fetchCategories({commit, dispatch}) {
+            try {
+                const uid = await dispatch('getuid')
+                const categories = (await firebase.database().ref(`/users/${uid}`).once('value')).val() || {}
+                return Object.keys(categories).map(key => ({...categories[key]}))
+            } catch (e) {
+                throw e
+            }
+        }
     }
 }
 

@@ -86,22 +86,22 @@
 
                 <div class="fix">
                     <form action="" @submit.prevent="nameHandler">
-                        <div class="fix__name" >
-                            <input type="text" v-model="name">
-                            <button class="btn__fix" type="submit">Изменить Ник</button>
+                        <div class="fix__name">
+                            <input type="text" v-model="name" placeholder="Введите Новый Ник">
+                            <button class="btn__fix" type="submit" >Изменить Ник</button>
                         </div>
                     </form>
 
                     <form action="" @submit.prevent="emailHandler">
                         <div class="fix__name" >
-                            <input type="email" v-model="email">
+                            <input type="email" v-model="email" placeholder="Введите Новый Email">
                             <button class="btn__fix" >Изменить Email</button>
                         </div>
                     </form>
 
                     <form action="" @submit.prevent="passwordHandler">
                         <div class="fix__name" >
-                            <input type="password" v-model="password">
+                            <input type="password" v-model="password" placeholder="Введите Новый Пароль">
                             <button class="btn__fix" >Изменить Пароль</button>
                         </div>
                     </form>
@@ -124,11 +124,37 @@
 </template>
 
 <script>
+    import {email, required, minLength} from 'vuelidate/lib/validators'
 
     export default {
         data: () => ({
-            categories: []
+            categories: [],
+            data() {
+                return {
+                    email: '',
+                    password: '',
+                    name: '',
+                    submitStatus: null
+                }
+            },
+            validations: {
+                email: {
+                    email,
+                    required
+                },
+                password: {
+                    required,
+                    minLength: minLength(6)
+                },
+                name: {
+                    required,
+                    minLength: minLength(1)
+                }
+            },
         }),
+
+
+
         name: "UserProfile",
         async mounted() {
             this.categories = await this.$store.dispatch('fetchCategories')

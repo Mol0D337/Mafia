@@ -78,16 +78,7 @@
 <script>
     export default {
         name: "HeaderMainPage",
-        methods: {
-            async logout() {
-                const userAuth = localStorage.getItem('userAuth');
-                if (userAuth === "yes") {
-                    next('/profile')
-                } else {
-                    next('/entry')
-                }
-            }
-        },
+
     }
 </script>
 

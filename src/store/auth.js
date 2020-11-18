@@ -16,7 +16,7 @@ export default {
                 await firebase.database().ref(`/users/${uid}/info`).set({
                     name: nickName,
                     email,
-                    password
+                    password,
                 })
             } catch (e) {
                 throw e
@@ -24,7 +24,6 @@ export default {
         },
         getuid() {
             const user = firebase.auth().currentUser
-            console.log(user, "user");
             return user ? user.uid : null
         },
         async logout({commit}) {
@@ -33,3 +32,6 @@ export default {
         },
     }
 }
+
+
+

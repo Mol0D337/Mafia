@@ -31,12 +31,36 @@ export default {
             commit('clearInfo')
         },
 
-        async updateCategory({commit, dispatch}, {name}) {
+
+
+        async updateCategory1({ dispatch, rootState}) {
             const uid = await dispatch('getuid')
-            await firebase.database().ref(`/users/${uid}/info/name`).child(name).update(name)
+            const editName = {
+                name: rootState.info.name
+            }
+            await firebase.database().ref(`/users/${uid}/info`).update(editName)
         },
 
-        async fetchCategories({commit, dispatch}) {
+
+        async updateCategory2({ dispatch, rootState}) {
+            const uid = await dispatch('getuid')
+            const editEmail = {
+                email: rootState.info.email
+            }
+            await firebase.database().ref(`/users/${uid}/info`).update(editEmail)
+        },
+
+
+        async updateCategory3({ dispatch, rootState}) {
+            const uid = await dispatch('getuid')
+            const editPassword = {
+                password: rootState.info.password
+            }
+            await firebase.database().ref(`/users/${uid}/info`).update(editPassword)
+        },
+
+
+        async fetchCategories({ dispatch}) {
             try {
                 const uid = await dispatch('getuid')
                 const categories = (await firebase.database().ref(`/users/${uid}`).once('value')).val() || {}

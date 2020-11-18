@@ -2,7 +2,10 @@ import firebase from 'firebase/app'
 
 export default {
     state: {
-        info: {}
+        info: {},
+        name: '',
+        email: '',
+        password: ''
     },
     mutations: {
         setInfo(state, info) {
@@ -10,6 +13,15 @@ export default {
         },
         clearInfo(state) {
             state.info = {}
+        },
+        SET_NAME (state, name) {
+            state.name = name;
+        },
+        SET_EMAIL (state, email) {
+            state.email = email;
+        },
+        SET_PASSWORD (state, password) {
+            state.password = password;
         }
     },
     actions: {
@@ -18,12 +30,13 @@ export default {
                 const uid = await dispatch('getuid')
                 const info = (await firebase.database().ref(`/users/${uid}/info`).once('value')).val()
                 commit('setInfo', info)
-            } catch (e) {
-
-            }
+            } catch (e) {}
         }
     },
     getters: {
-        info: s=> s.info
+        info: s=> s.info,
+        getName: s => s.name,
+        getEmail: s => s.email,
+        getPassword: s => s.password,
     }
 }

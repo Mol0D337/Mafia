@@ -39,6 +39,7 @@
                 await this.$store.dispatch('fetchInfo')
             }
             this.loading = false
+
         },
         name: "Profile",
         components: {UserProfile, Footer,Header}

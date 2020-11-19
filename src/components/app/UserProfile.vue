@@ -113,47 +113,63 @@
         </div>
 
         <div id="content-tab3">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur culpa, dolor eum eveniet illo illum, libero perferendis quam quibusdam repellat, totam voluptatibus. Accusantium consequatur cum cumque deleniti dicta dignissimos distinctio eos est facilis hic molestiae neque nihil nisi omnis optio quae quo quod, repellat repellendus saepe sint temporibus totam?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi asperiores autem corporis dolorum fugit laboriosam, minima odio sit ullam. Accusamus aperiam architecto doloribus eum illo numquam perspiciatis quia rem similique vel? Atque dignissimos distinctio impedit, odit quis temporibus voluptate. Beatae, impedit in nobis qui quibusdam temporibus vel. Obcaecati, tempore?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dolor impedit laboriosam molestias, natus porro temporibus tenetur voluptatem voluptatum! Porro?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum iste perferendis placeat quaerat quia sit! Ab deserunt, exercitationem facilis ipsam iure labore quibusdam repudiandae ullam vero vol
-            </p>
+            <div class="inner">
+                <div class="wrapper__soc-network1">
+                    <div class="discord">
+                        <i class="fab fa-discord"></i>
+                        <div class="discord__name">Discord</div>
+                    </div>
+                    <div class="paragraph">В данный момент привязка Discord ничего не делает, но мы работаем над этим!</div>
+
+                    <div class="paragraph">
+                        <a href="#" class="button-discord">Привязать</a>
+                    </div>
+                </div>
+                <div class="wrapper__soc-network2">
+                    <div class="vk">
+                        <i class="fab fa-vk"></i>
+                        <div class="discord__name">Вконтакте</div>
+                    </div>
+                    <div class="paragraph">Привязав аккаунт Вконтакте, вы сможете входить на сайт в один клик.</div>
+
+                    <div class="paragraph">
+                        <a href="#" class="btn-vk">Привязать</a>
+                    </div>
+                </div>
+                <div class="wrapper__soc-network3">
+                    <div class="discord">
+                        <i class="fab fa-google"></i>
+                        <div class="discord__name">Google</div>
+                    </div>
+                    <div class="paragraph">В данный момент привязка Google ничего не делает, но мы работаем над этим!</div>
+
+                    <div class="paragraph">
+                        <a href="#" class="button-discord">Привязать</a>
+                    </div>
+                </div>
+                <div class="wrapper__soc-network4">
+                    <div class="discord">
+                        <i class="fab fa-twitch"></i>
+                        <div class="discord__name">Twitch</div>
+                    </div>
+                    <div class="paragraph">В данный момент привязка Twitch ничего не делает, но мы работаем над этим!</div>
+
+                    <div class="paragraph">
+                        <a href="#" class="button-twitch">Привязать</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    import {email, required, minLength} from 'vuelidate/lib/validators'
+
 
     export default {
         data: () => ({
             categories: [],
-            data() {
-                return {
-                    email: '',
-                    password: '',
-                    name: '',
-                    submitStatus: null
-                }
-            },
-            validations: {
-                email: {
-                    email,
-                    required
-                },
-                password: {
-                    required,
-                    minLength: minLength(6)
-                },
-                name: {
-                    required,
-                    minLength: minLength(1)
-                }
-            },
         }),
-
-
 
         name: "UserProfile",
         async mounted() {
@@ -476,5 +492,167 @@
         font-size: 13px;
         color: #679d69;
     }
+
+
+/*    +++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+    .inner {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        font-family: "IBM Plex Sans" sans-serif;
+    }
+
+    .wrapper__soc-network1 {
+        width: 380px;
+        height: 150px;
+        border-bottom: 1px solid #9aa1a7;
+        border-right: 1px solid #9aa1a7;
+    }
+    .wrapper__soc-network2 {
+        width: 380px;
+        height: 150px;
+        border-bottom: 1px solid #9aa1a7;
+    }
+    .wrapper__soc-network3 {
+        width: 380px;
+        height: 150px;
+        border-right: 1px solid #9aa1a7;
+    }
+    .wrapper__soc-network4 {
+        width: 380px;
+        height: 150px;
+
+    }
+
+    .discord {
+        display: flex;
+        align-items: center;
+        margin: 15px 20px 10px;
+    }
+    .fa-discord{
+        color: #6f8cce;
+        font-size: 22px;
+    }
+    .discord__name {
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: 800;
+        color: #5b5d67;
+    }
+    .button-discord {
+        width: 110px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none!important;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #6f8cce;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: background-color .25s,color .25s;
+    }
+    .btn-vk  {
+        width: 110px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none!important;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: background-color .25s,color .25s;
+        background-color: #4680c2;
+    }
+    .button-twitch  {
+        width: 110px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none!important;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: background-color .25s,color .25s;
+        background-color: #9146ff;
+    }
+    .button-twitch:hover {
+        background-color: #a76bff;
+    }
+    .button-discord:hover {
+        background-color: #8ea1e1;
+    }
+    .btn-vk:hover {
+        background-color: #6b99ce;
+    }
+    .paragraph {
+        margin: 10px 20px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #5b5d67;
+        line-height: 1.2rem;
+    }
+    .paragraph a {
+        text-decoration: none;
+    }
+
+    .fa-vk {
+        color: #4680c2;
+        font-size: 22px;
+    }
+
+    .fa-google {
+        color: #4285f4;
+        font-size: 22px;
+    }
+    .vk {
+        display: flex;
+        align-items: center;
+        margin: 15px 20px 10px;
+    }
+    .fa-twitch {
+        color: #a76bff;
+        font-size: 22px;
+    }
+
+
 
 </style>

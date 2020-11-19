@@ -13,7 +13,9 @@
 
             <div class="profile">
                 <div class="avatar">
-                    <div class="img"></div>
+                    <div class="img">
+                        <img src="../../../public/img/avatar.jpg" alt="">
+                    </div>
                 </div>
 
                 <div class="stat">
@@ -71,16 +73,16 @@
                     </div>
 
                 </div>
-
             </div>
-
         </div>
 
         <div id="content-tab2">
 
             <div class="setting">
                 <div class="avatar">
-                    <div class="img"></div>
+                    <div class="img">
+                        <img src="../../../public/img/avatar.jpg" alt="">
+                    </div>
                     <button class="btn__fix" >Загрузить аватар</button>
                 </div>
 
@@ -302,7 +304,13 @@
         padding: 2px;
     }
     .img {
-        background: #2f363c;
+
+        width: 188px;
+        height: 188px;
+        border-radius: 99px;
+        margin-bottom: 20px;
+    }
+    .img img {
         width: 188px;
         height: 188px;
         border-radius: 99px;

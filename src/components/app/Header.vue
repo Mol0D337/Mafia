@@ -25,10 +25,10 @@
             <router-link
                     tag="li"
                     class="header__item-left header__item-left-last"
-                    to="/collection"
+                    to="/message"
                     active-class="active"
             >
-                КОЛЛЕКЦИЯ
+                СООБЩЕНИЯ
             </router-link>
 
 
@@ -55,10 +55,10 @@
             <router-link
                     tag="li"
                     class="header__item-right"
-                    to="/career"
+                    to="/collection"
                     active-class="active"
             >
-                КАРЬЕРА
+                КОЛЛЕКЦИЯ
             </router-link>
 
             <router-link
@@ -185,7 +185,7 @@
         height: 50px;
         position: absolute;
         left: 50%;
-        margin-left: -162px;
+        margin-left: -175px;
         top: 0;
         transform: skewX(44deg);
     }
@@ -194,7 +194,7 @@
         height: 50px;
         position: absolute;
         left: 50%;
-        margin-left: 135px;
+        margin-left: 121px;
         top: 0;
         transform: skewX(-44deg);
     }

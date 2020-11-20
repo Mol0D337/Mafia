@@ -118,6 +118,19 @@
             <div class="_right"></div>
           </div>
         </div>
+        <div class="Item _q1 _inventory _clickable">
+          <div class="Item-image">
+            <div class="img">
+              <img src="../../public/img/case.png" alt="">
+            </div>
+          </div>
+          <div class="Item-name">Коробочка с кубиками #5</div>
+
+          <div class="Item-marks">
+            <div class="_left"></div>
+            <div class="_right"></div>
+          </div>
+        </div>
       </div>
 
 

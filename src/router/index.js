@@ -80,9 +80,17 @@ export default new VueRouter({
       component: () => import('../views/Shop.vue')
     },
     {
-      path: '/career',
-      name: 'career',
-      component: () => import('../views/Career.vue')
+      path: '/message',
+      name: 'message',
+      component: () => import('../views/Message.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "yes") {
+          next()
+        } else {
+          next('/entry')
+        }
+      }
     },
     {
       path: '/profile',

@@ -40,101 +40,21 @@
       </div>
 
       <div class="kek">
-        <div class="Item _q1 _inventory _clickable">
-        <div class="Item-image">
-          <div class="img">
-            <img src="../../public/img/case.png" alt="">
-          </div>
-        </div>
-        <div class="Item-name">Коробочка с кубиками #5</div>
 
-        <div class="Item-marks">
-          <div class="_left"></div>
-          <div class="_right"></div>
+        <div
+                class="Item _q1 _inventory _clickable"
+                v-for="(item, i) in filteredItems"
+                :key="i"
+        >
+          <div class="Item-image">
+            <div class="img">
+              <img src="../../public/img/case.png" alt="">
+            </div>
+          </div>
+          <div class="Item-name">{{item}}</div>
         </div>
+
       </div>
-        <div class="Item _q1 _inventory _clickable">
-          <div class="Item-image">
-            <div class="img">
-              <img src="../../public/img/case.png" alt="">
-            </div>
-          </div>
-          <div class="Item-name">Коробочка с кубиками #5</div>
-
-          <div class="Item-marks">
-            <div class="_left"></div>
-            <div class="_right"></div>
-          </div>
-        </div>
-        <div class="Item _q1 _inventory _clickable">
-          <div class="Item-image">
-            <div class="img">
-              <img src="../../public/img/case.png" alt="">
-            </div>
-          </div>
-          <div class="Item-name">Коробочка с кубиками #5</div>
-
-          <div class="Item-marks">
-            <div class="_left"></div>
-            <div class="_right"></div>
-          </div>
-        </div>
-        <div class="Item _q1 _inventory _clickable">
-          <div class="Item-image">
-            <div class="img">
-              <img src="../../public/img/case.png" alt="">
-            </div>
-          </div>
-          <div class="Item-name">Коробочка с кубиками #5</div>
-
-          <div class="Item-marks">
-            <div class="_left"></div>
-            <div class="_right"></div>
-          </div>
-        </div>
-        <div class="Item _q1 _inventory _clickable">
-          <div class="Item-image">
-            <div class="img">
-              <img src="../../public/img/case.png" alt="">
-            </div>
-          </div>
-          <div class="Item-name">Коробочка с кубиками #5</div>
-
-          <div class="Item-marks">
-            <div class="_left"></div>
-            <div class="_right"></div>
-          </div>
-        </div>
-        <div class="Item _q1 _inventory _clickable">
-          <div class="Item-image">
-            <div class="img">
-              <img src="../../public/img/case.png" alt="">
-            </div>
-          </div>
-          <div class="Item-name">Коробочка с кубиками #5</div>
-
-          <div class="Item-marks">
-            <div class="_left"></div>
-            <div class="_right"></div>
-          </div>
-        </div>
-        <div class="Item _q1 _inventory _clickable">
-          <div class="Item-image">
-            <div class="img">
-              <img src="../../public/img/case.png" alt="">
-            </div>
-          </div>
-          <div class="Item-name">Коробочка с кубиками #5</div>
-
-          <div class="Item-marks">
-            <div class="_left"></div>
-            <div class="_right"></div>
-          </div>
-        </div>
-      </div>
-
-
-
     </div>
     <Footer/>
   </div>
@@ -152,30 +72,11 @@
         search: '',
         loading: true,
         list: [
-          'MUCTEP_3OM6U',
-          'Dogda',
-          'У любβи нﻉт глаз',
-          'ПУТИН',
-          'weltkind',
-          'Good_Joker',
-          'cheK^',
-          'Гомик в Деревне',
-          'Hardwell',
-          'FoXy',
-          'Твой Mr.PropeR',
-          '+Yeb@shu_v_k@shu+',
-          'FuRRRoR',
-          'BOND 007',
-          'DragonX',
-          'Your Die',
-          'Lolikill',
-          'Печень Сталина',
-          '-Turbo_Bot-',
-          'Эрагон',
-          'ВЫЛЫСЫПЫДЫСТ ',
-          '๏̯͡๏ ищу ♥ теЂя ๏̯͡๏',
-          '_ХиТросТь_',
-          'без трусиков',
+          'Кейс' ,
+          'Кейс' ,
+          'Кейс',
+          "a",
+          'b',
         ],
         categories: [],
       };
@@ -186,8 +87,8 @@
     },
 
     computed: {
-      filteredUsers () {
-        return this.list.filter(user => user.includes(this.search))
+      filteredItems () {
+        return this.list.filter(item => item.includes(this.search))
       },
     },
   }
@@ -251,7 +152,7 @@
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 25px;
     color: #679d69;
-    margin-right: 360px;
+    margin-right: 375px;
   }
   .search {
     margin: 0 0 20px 40px;
@@ -308,6 +209,9 @@
     padding: 0 20px;
     height: 1px;
     transform: scale(1);
+  }
+  .Item-image:hover {
+    background-color: #f1f1f1;
   }
   .img img{
     width: 100%;

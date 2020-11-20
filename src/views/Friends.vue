@@ -9,10 +9,12 @@
 
                 <div class="search">
                     <div class="friend__search">
-                        <input type="text" class="friend__search-input" placeholder="Найти Друга">
+                        <input type="text" id="elastic"
+                               v-model="search"
+                               class="friend__search-input" placeholder="Найти Друга">
                     </div>
                     <div class="friend__search-new">
-                        <input type="text" class="friend__search-input-new" placeholder="Поиск Игроков">
+                        <input type="text"  class="friend__search-input-new" placeholder="Поиск Игроков">
                     </div>
                 </div>
                 <ul class="ul">
@@ -20,6 +22,54 @@
                         <div class="avatar">
                             <img src="../../public/img/avatar.jpg" alt="">
                         </div>
+                        <a href="#">MastJen</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">Zhenia12320</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">Zhenia12320</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">Nagibator2005</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">MastJen</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">Zhenia12320</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">Nagibator2005</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
 
                         <a href="#">MastJen</a>
                     </li>
@@ -64,6 +114,41 @@
                         </div>
 
                         <a href="#">Nagibator2005</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">MastJen</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">Zhenia12320</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">Zhenia12320</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">Nagibator2005</a>
+                    </li>
+                    <li class="li">
+                        <div class="avatar">
+                            <img src="../../public/img/avatar.jpg" alt="">
+                        </div>
+
+                        <a href="#">MastJen</a>
                     </li>
                 </ul>
             </div>
@@ -76,7 +161,35 @@
     import Footer from "../components/app/Footer";
     export default {
         name: "Friends",
-        components: {Footer, Header}
+        components: {Footer, Header},
+        data() {
+            return {
+                search: '',
+                todos: []
+            };
+        },
+
+        computed: {
+            searchElastic() {
+                document.querySelector('#elastic').oninput = function () {
+                    let val = this.value.trim();
+                    let elasticItems = document.querySelectorAll('.li a');
+                    if (val != '') {
+                        elasticItems.forEach(function (elem) {
+                            if (elem.innerText.search(val) == -1) {
+                                elem.classList.add('hide');
+                            } else
+                                elem.classList.remove('hide');
+                        });
+                    }
+                    else {
+                        elasticItems.forEach(function (elem) {
+                            elem.classList.remove('hide');
+                        });
+                    }
+                }
+            },
+        },
     }
 </script>
 
@@ -154,7 +267,9 @@
         display: flex;
         align-items: center;
     }
-
+    .li a.hide {
+        display: none;
+    }
     .avatar {
         display: flex;
     }

@@ -55,6 +55,11 @@ export default new VueRouter({
       name: 'entry',
       component: () => import('../views/ProfileLogin.vue'),
     },
+    {
+      path: '/friends/new',
+      name: 'friendsNew',
+      component: () => import('../views/FriendsNew.vue'),
+    },
   ]
 })
 

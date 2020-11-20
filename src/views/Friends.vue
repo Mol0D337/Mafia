@@ -14,141 +14,26 @@
                                class="friend__search-input" placeholder="Найти Друга">
                     </div>
                     <div class="friend__search-new">
-                        <input type="text"  class="friend__search-input-new" placeholder="Поиск Игроков">
+                        <router-link
+                                class="lol"
+                                to='/friends/new'
+                                active-class="active"
+                        >
+                            <button class="friend__search-input-new">Поиск Игроков</button>
+                        </router-link>
                     </div>
                 </div>
                 <ul class="ul">
-                    <li class="li">
+                    <li
+                        class="li"
+                        v-for="(user, u) in filteredUsers"
+                        :key="u"
+                    >
                         <div class="avatar">
                             <img src="../../public/img/avatar.jpg" alt="">
                         </div>
-                        <a href="#">MastJen</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Zhenia12320</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Zhenia12320</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Nagibator2005</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">MastJen</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Zhenia12320</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Nagibator2005</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">MastJen</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Zhenia12320</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Zhenia12320</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Nagibator2005</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">MastJen</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Zhenia12320</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Nagibator2005</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">MastJen</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Zhenia12320</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Zhenia12320</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">Nagibator2005</a>
-                    </li>
-                    <li class="li">
-                        <div class="avatar">
-                            <img src="../../public/img/avatar.jpg" alt="">
-                        </div>
-
-                        <a href="#">MastJen</a>
+                        <a href="#">{{user}}</a>
+                        <div class="lol"><button class="btn">Удалить</button></div>
                     </li>
                 </ul>
             </div>
@@ -165,29 +50,38 @@
         data() {
             return {
                 search: '',
-                todos: []
+                list: [
+                    'MUCTEP_3OM6U',
+                    'Dogda',
+                    'У любβи нﻉт глаз',
+                    'ПУТИН',
+                    'weltkind',
+                    'Good_Joker',
+                    'cheK^',
+                    'Гомик в Деревне',
+                    'Hardwell',
+                    'FoXy',
+                    'Твой Mr.PropeR',
+                    '+Yeb@shu_v_k@shu+',
+                    'FuRRRoR',
+                    'BOND 007',
+                    'DragonX',
+                    'Your Die',
+                    'Lolikill',
+                    'Печень Сталина',
+                    '-Turbo_Bot-',
+                    'Эрагон',
+                    'ВЫЛЫСЫПЫДЫСТ ',
+                    '๏̯͡๏ ищу ♥ теЂя ๏̯͡๏',
+                    '_ХиТросТь_',
+                    'без трусиков',
+                ],
             };
         },
 
         computed: {
-            searchElastic() {
-                document.querySelector('#elastic').oninput = function () {
-                    let val = this.value.trim();
-                    let elasticItems = document.querySelectorAll('.li a');
-                    if (val != '') {
-                        elasticItems.forEach(function (elem) {
-                            if (elem.innerText.search(val) == -1) {
-                                elem.classList.add('hide');
-                            } else
-                                elem.classList.remove('hide');
-                        });
-                    }
-                    else {
-                        elasticItems.forEach(function (elem) {
-                            elem.classList.remove('hide');
-                        });
-                    }
-                }
+            filteredUsers () {
+                return this.list.filter(user => user.includes(this.search))
             },
         },
     }
@@ -235,6 +129,7 @@
 
     }
     .friend__search-input, .friend__search-input-new{
+        text-decoration: none;
         font-size: 16px;
         padding: 6px 14px;
         width: 300px;
@@ -278,5 +173,53 @@
         width: 60px;
         height: 60px;
     }
+    .li:hover a {
+        display: none;
+    }
+    .li button{
+        display: none;
+    }
+    .li:hover button {
+        display: block;
+    }
+    .lol {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15px;
+        text-decoration: none;
+    }
+
+    .btn {
+        width: 110px;
+        height: 30px;
+        border: none!important;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: background-color .25s,color .25s;
+        background-color: #9146ff;
+        text-decoration: none;
+        font-family: "IBM Plex Sans", sans-serif;
+    }
+    .btn:hover {
+        background-color: #da4553;
+    }
+
+
+
+
 
 </style>

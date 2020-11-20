@@ -3,6 +3,13 @@
     <Header/>
     <div class="wrapper">
       <div class="friends">
+        <router-link
+          class="router-link"
+          to="/friends"
+          active-class="active"
+        >
+          <i class="fas fa-arrow-circle-left"></i>
+        </router-link>
         <div class="friend__text">Поиск Игроков</div>
       </div>
 
@@ -121,7 +128,16 @@
 }
 .friends {
   padding: 20px 40px;
-
+  display: flex;
+  align-items: center;
+}
+.router-link {
+  text-decoration: none;
+  margin-right: 15px;
+}
+.fa-arrow-circle-left {
+  font-size: 34px;
+  color: #5b5d67;
 }
 .friend__text {
   font-family: "IBM Plex Sans", sans-serif;

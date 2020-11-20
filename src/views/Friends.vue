@@ -1,8 +1,24 @@
 <template>
     <div class="bgc">
-        <Header/>
+
+        <loader class="loader" v-if="loading"/>
+
+        <div v-else>
+            <Header/>
             <div class="wrapper">
                 <div class="friends">
+                    <router-link
+                            class="router-link"
+                            to="/profile"
+                            active-class="active"
+                    >
+                        <div class="user__name"
+                             v-for="c of categories"
+                        >
+                            {{c.name}}
+                        </div>
+                    </router-link>
+                    <div class="arrow"><i class="fas fa-caret-right"></i></div>
                     <div class="friend__text">Друзья</div>
                     <div class="friend__sum">{{list.length}}</div>
                 </div>
@@ -25,9 +41,9 @@
                 </div>
                 <ul class="ul">
                     <li
-                        class="li"
-                        v-for="(user, u) in filteredUsers"
-                        :key="u"
+                            class="li"
+                            v-for="(user, u) in filteredUsers"
+                            :key="u"
                     >
                         <div class="avatar">
                             <img src="../../public/img/avatar.jpg" alt="">
@@ -37,7 +53,9 @@
                     </li>
                 </ul>
             </div>
-        <Footer/>
+            <Footer/>
+        </div>
+
     </div>
 </template>
 
@@ -50,6 +68,7 @@
         data() {
             return {
                 search: '',
+                loading: true,
                 list: [
                     'MUCTEP_3OM6U',
                     'Dogda',
@@ -76,7 +95,12 @@
                     '_ХиТросТь_',
                     'без трусиков',
                 ],
+                categories: [],
             };
+        },
+        async mounted() {
+            this.categories = await this.$store.dispatch('fetchCategories')
+            this.loading = false
         },
 
         computed: {
@@ -88,6 +112,13 @@
 </script>
 
 <style scoped>
+    .loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
     .bgc{
         background-color: #f4f4f5;
         width: 100%;
@@ -104,11 +135,27 @@
         font-family: 'IBM Plex Sans', sans-serif;
         color: #5b5d67;
     }
+    .user__name {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 30px;
+        color: #3bafda;
+    }
+    .user__name:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .router-link {
+        text-decoration: none;
+    }
+    .fa-caret-right {
+        padding-top: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 24px;
+    }
     .friends {
         padding: 20px 40px;
-        display: grid;
-        grid-template-columns: 11% 70% 14%;
-
+        display: flex;
     }
     .friend__text {
         font-family: "IBM Plex Sans", sans-serif;

@@ -139,6 +139,9 @@
   font-size: 34px;
   color: #5b5d67;
 }
+.fa-arrow-circle-left:hover {
+  color: #9146ff;
+}
 .friend__text {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 30px;

@@ -29,6 +29,27 @@ export default new VueRouter({
       path: '/friends/new',
       name: 'friendsNew',
       component: () => import('../views/FriendsNew.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "yes") {
+          next()
+        } else {
+          next('/user/not/login')
+        }
+      }
+    },
+    {
+      path: '/trades',
+      name: 'Trades',
+      component: () => import('../views/Trades.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "yes") {
+          next()
+        } else {
+          next('/user/not/login')
+        }
+      }
     },
     {
       path: '/user/not/login',
@@ -38,7 +59,15 @@ export default new VueRouter({
     {
       path: '/collection',
       name: 'collection',
-      component: () => import('../views/Collection.vue')
+      component: () => import('../views/Collection.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "yes") {
+          next()
+        } else {
+          next('/user/not/login')
+        }
+      }
     },
     {
       path: '/play',
@@ -51,9 +80,17 @@ export default new VueRouter({
       component: () => import('../views/Shop.vue')
     },
     {
-      path: '/career',
-      name: 'career',
-      component: () => import('../views/Career.vue')
+      path: '/message',
+      name: 'message',
+      component: () => import('../views/Message.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "yes") {
+          next()
+        } else {
+          next('/entry')
+        }
+      }
     },
     {
       path: '/profile',

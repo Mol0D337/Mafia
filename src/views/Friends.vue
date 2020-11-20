@@ -49,7 +49,9 @@
                             <img src="../../public/img/avatar.jpg" alt="">
                         </div>
                         <a href="#">{{user}}</a>
-                        <div class="lol"><button class="btn">Удалить</button></div>
+                        <div class="lol">
+                          <button class="btn">Удалить</button>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -209,9 +211,6 @@
         display: flex;
         align-items: center;
     }
-    .li a.hide {
-        display: none;
-    }
     .avatar {
         display: flex;
     }
@@ -223,11 +222,13 @@
     .li:hover a {
         display: none;
     }
-    .li button{
+    .li .lol{
         display: none;
     }
-    .li:hover button {
-        display: block;
+    .li:hover .lol {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
     }
     .lol {
         display: flex;

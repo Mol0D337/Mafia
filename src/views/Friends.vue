@@ -4,7 +4,7 @@
             <div class="wrapper">
                 <div class="friends">
                     <div class="friend__text">Друзья</div>
-                    <div class="friend__sum">3</div>
+                    <div class="friend__sum">{{list.length}}</div>
                 </div>
 
                 <div class="search">

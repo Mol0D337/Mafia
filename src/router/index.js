@@ -15,7 +15,25 @@ export default new VueRouter({
     {
       path: '/friends',
       name: 'friends',
-      component: () => import('../views/Friends.vue')
+      component: () => import('../views/Friends.vue'),
+      beforeEnter: (to, from, next) => {
+        const userAuth = localStorage.getItem('userAuth');
+        if (userAuth === "yes") {
+          next()
+        } else {
+          next('/user/not/login')
+        }
+      }
+    },
+    {
+      path: '/friends/new',
+      name: 'friendsNew',
+      component: () => import('../views/FriendsNew.vue'),
+    },
+    {
+      path: '/user/not/login',
+      name: 'UserNotLogin',
+      component: () => import('../views/UserNotLogin.vue'),
     },
     {
       path: '/collection',
@@ -55,11 +73,7 @@ export default new VueRouter({
       name: 'entry',
       component: () => import('../views/ProfileLogin.vue'),
     },
-    {
-      path: '/friends/new',
-      name: 'friendsNew',
-      component: () => import('../views/FriendsNew.vue'),
-    },
+
   ]
 })
 

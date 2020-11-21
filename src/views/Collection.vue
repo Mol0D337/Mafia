@@ -6,27 +6,36 @@
   <div class="bgc">
     <Header/>
     <div class="wrapper">
-      <div class="friends">
-        <router-link
-                class="router-link"
-                to="/profile"
-                active-class="active"
-        >
-          <div class="user__name"
-               v-for="c of categories"
+      <div class="header__wrapper">
+        <div class="friends">
+
+          <router-link
+                  class="router-link"
+                  to="/profile"
+                  active-class="active"
           >
-            {{c.name}}
-          </div>
-        </router-link>
-        <div class="arrow"><i class="fas fa-caret-right"></i></div>
-        <div class="friend__text">Инвентарь</div>
-        <div class="friend__sum">{{list.length}}</div>
-        <router-link
-          to="/trades"
+            <div class="user__name"
+                 v-for="c of categories"
+            >
+              {{c.name}}
+            </div>
+          </router-link>
+          <div class="arrow"><i class="fas fa-caret-right"></i></div>
+          <div class="friend__text">Инвентарь</div>
+          <div class="friend__sum">{{list.length}}</div>
+        </div>
+        <div class="btn__wrapper">
+          <router-link
+                class="router"
+                to="/trades"
         >
           <button class="btn">Предложения обмена</button>
         </router-link>
+        </div>
+
+
       </div>
+
 
       <div class="search">
         <div class="friend__search">
@@ -96,6 +105,10 @@
 
 <style scoped>
 
+
+  .router {
+    text-decoration: none;
+  }
   .loader {
     display: flex;
     justify-content: center;
@@ -138,8 +151,19 @@
     font-size: 24px;
   }
   .friends {
-    padding: 20px 40px;
     display: flex;
+  }
+
+  .header__wrapper {
+    margin: 0px 40px ;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .btn__wrapper {
+    position: absolute;
+    right: 0;
   }
   .friend__text {
     font-family: "IBM Plex Sans", sans-serif;
@@ -152,7 +176,6 @@
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 25px;
     color: #679d69;
-    margin-right: 375px;
   }
   .search {
     margin: 0 0 20px 40px;
@@ -276,7 +299,6 @@
 
 
   .btn {
-
     width: 210px;
     height: 40px;
     border: none!important;

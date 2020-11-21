@@ -101,7 +101,7 @@ export default new VueRouter({
         if (userAuth === "yes") {
           next()
         } else {
-          next('/entry')
+          next('/user/not/login')
         }
       }
     },

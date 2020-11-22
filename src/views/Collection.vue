@@ -3,7 +3,7 @@
   <loader class="loader" v-if="loading"/>
 
   <div v-else>
-  <div class="bgc">
+    <div class="bgc">
     <Header/>
     <div class="wrapper">
       <div class="header__wrapper">

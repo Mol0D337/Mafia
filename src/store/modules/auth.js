@@ -2,22 +2,23 @@ import firebase from 'firebase/app'
 
 export default {
     actions: {
-        async login({dispatch, commit}, {email,password}) {
+        async login({dispatch, commit}, payload) {
+            const { email, password } = payload;
             try {
                 await firebase.auth().signInWithEmailAndPassword(email, password)
             } catch (e) {
                 throw e
             }
         },
-        async register({dispatch}, {email, password, nickName}) {
+        async register({ dispatch }, {email, password, nickName}) {
             try {
-                await firebase.auth().createUserWithEmailAndPassword( email, password,)
-                const uid = await dispatch('getuid')
+                await firebase.auth().createUserWithEmailAndPassword( email, password,);
+                const uid = await dispatch('getuid');
                 await firebase.database().ref(`/users/${uid}/info`).set({
                     name: nickName,
                     email,
                     password,
-                })
+                });
             } catch (e) {
                 throw e
             }
@@ -59,6 +60,19 @@ export default {
             await firebase.database().ref(`/users/${uid}/info`).update(editPassword)
         },
 
+
+        // async updateCategoryLOL({ dispatch, rootState}, {payload}) {
+        //     const {email = null, password = null, nickname = null } = payload;
+        //     const uid = await dispatch('getuid')
+        //     const data = {};
+        //     if (email) data.email = email;
+        //     if (password) data.password = password;
+        //     if (nickname) data.nickname = nickname;
+        //
+        //     const res = await firebase.database().ref(`/users/${uid}/info`).update(data);
+        //
+        //     commit('SET_USER', res.data);
+        // },
 
         async fetchCategories({ dispatch}) {
             try {

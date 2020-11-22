@@ -40,7 +40,7 @@
             >
                 <div class="btn"></div>
                 <div class="btn-after"></div>
-                <a class="item" href="#">ИГРАТЬ</a>
+                <div class="item" href="#">ИГРАТЬ</div>
             </router-link>
 
             <router-link

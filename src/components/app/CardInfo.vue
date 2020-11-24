@@ -13,10 +13,15 @@
           <div class="card-back-line"></div>
           <input type="text" id="cvv">
         </div>
-        <div class="card-front">
-          <img src="" alt="" class="card-image">
-          <img src="" alt="" class="card-logo">
-          <input type="text" id="card-number">
+        <div class="card-front" ref="front">
+          <img src=""
+                  class="cardimage"
+               ref="cardimage">
+          <img src=""
+                  class="cardlogo"
+               ref="cardlogo">
+
+          <input type="text" id="card-number" v-model="cardNum" @input="cardValidate">
           <input type="text" id="card-to-month">
           <input type="text" id="card-to-year">
         </div>
@@ -28,9 +33,34 @@
   </div>
 </template>
 
-<script>
+<script >
+  import CardInfo from 'cardinfo';
   export default {
-    name: "CardInfo"
+    name: "CardInfo",
+    data () {
+      return {
+        cardNum: '',
+      };
+    },
+    methods: {
+      cardValidate () {
+        if (this.cardNum.trim().length > 5) {
+          let cardInfo = new CardInfo(this.cardNum.trim(), {
+            banksLogosPath: '../../../node_modules/cardinfo/dist/banks-logos/',
+            brandsLogosPath: '../../../node_modules/cardinfo/dist/brands-logos/',
+          });
+          console.log(cardInfo.bankName);
+          console.log(cardInfo.bankLogo);
+          console.log(cardInfo.brandLogo);
+          console.log(cardInfo.backgroundColor);
+
+
+          this.$refs.cardimage.src = cardInfo.bankLogo;
+          this.$refs.cardlogo.src = cardInfo.brandLogo;
+          this.$refs.front.style.backgroundColor = cardInfo.backgroundColor;
+        }
+      }
+    },
   }
 </script>
 
@@ -39,15 +69,21 @@
   * {
     margin: 0;
     box-sizing: border-box;
+
   }
   .container {
-    max-width: 1200px;
-    margin: 40px auto;
-    font-family: "IBM Plex Sans" sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
+    max-width: 800px;
+    margin: 50px auto;
+
   }
   .left {
-    width: 70%;
-    float: left;
+    padding: 25px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    border-radius: 5px;
+    background-color: #fff;
+    border-bottom: 2px solid #e6e6e6;
+    box-shadow: 0 0 30px rgba(0,0,0,.1);
   }
   .text-center {
     text-align: center;
@@ -100,17 +136,20 @@
     border-radius: 15px;
     position: absolute;
   }
-  .card-image {
+  .cardimage {
     height: 60px;
+    width: 400px;
     position: absolute;
     left: 30px;
     top: 40px;
   }
-  .card-logo {
-    height: 50px;
+  .cardlogo {
     position: absolute;
     bottom: 40px;
     right: 30px;
+    background-size: 78px 50px;
+    width: 78px;
+    height: 50px;
   }
   #card-number {
     position: absolute;
@@ -148,7 +187,6 @@
     width: 60px;
     text-align: center;
     bottom: 40px;
-    left: 5%;
   }
 
 </style>

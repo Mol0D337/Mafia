@@ -132,7 +132,7 @@
         min-width: 320px;
         max-width: 800px;
         padding: 0;
-        margin: 200px auto;
+        margin: 50px auto;
         font-family: 'IBM Plex Sans', sans-serif;
         user-select: none;
     }

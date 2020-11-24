@@ -1,18 +1,23 @@
 <template>
     <div class="bcg">
         <Header/>
-            <p>Shop</p>
+            <div class="">
+                <ShopTabs/>
+                <CardInfo/>
+            </div>
         <Footer/>
     </div>
+
 </template>
 
 <script>
     import Header from "../components/app/Header";
     import Footer from "../components/app/Footer";
     import ShopTabs from "../components/app/ShopTabs";
+    import CardInfo from "../components/app/CardInfo";
     export default {
         name: "Shop",
-        components: {ShopTabs, Footer, Header}
+        components: {CardInfo, ShopTabs, Footer, Header}
     }
 </script>
 
@@ -21,9 +26,5 @@
         background-color: #f4f4f5;
         width: 100%;
         height: 100%;
-    }
-    p {
-        margin: 100px;
-        font-size: 60px;
     }
 </style>

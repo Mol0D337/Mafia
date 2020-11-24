@@ -18,6 +18,7 @@
 <style scoped>
     .footer {
         /*box-shadow: 0 0 100px rgba(0,0,0,.3);*/
+        width: 100vw;
         box-shadow: 0 0 30px rgba(0,0,0,.1);
         padding: 25px 0;
         background: #2f363c;

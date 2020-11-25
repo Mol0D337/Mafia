@@ -8,6 +8,7 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
+    "cboden/ratchet": "^0.4.3",
     "card-info": "^1.2.4",
     "core-js": "^3.6.5",
     "firebase": "^8.0.2",

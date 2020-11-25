@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header/>
-            <p>Play</p>
+            <chat/>
         <Footer/>
     </div>
 </template>
@@ -9,9 +9,10 @@
 <script>
     import Header from "../components/app/Header";
     import Footer from "../components/app/Footer";
+    import Chat from "../php/chat";
     export default {
         name: "Play",
-        components: {Footer, Header}
+        components: {Chat, Footer, Header}
     }
 </script>
 

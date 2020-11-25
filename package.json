@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
-    "cardinfo": "^1.2.4",
+    "card-info": "^1.2.4",
     "core-js": "^3.6.5",
     "firebase": "^8.0.2",
     "register-service-worker": "^1.7.1",

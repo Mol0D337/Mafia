@@ -14,9 +14,9 @@
           <input type="text" id="cvv">
         </div>
         <div class="card-front" ref="front">
-          <img src=""
+          <div
                   class="cardimage"
-               ref="cardimage">
+               ref="cardimage"></div>
           <img src=""
                   class="cardlogo"
                ref="cardlogo">
@@ -34,7 +34,7 @@
 </template>
 
 <script >
-  import CardInfo from 'cardinfo';
+  import CardInfo from 'card-info';
   export default {
     name: "CardInfo",
     data () {
@@ -46,8 +46,8 @@
       cardValidate () {
         if (this.cardNum.trim().length > 5) {
           let cardInfo = new CardInfo(this.cardNum.trim(), {
-            banksLogosPath: '../../../node_modules/cardinfo/dist/banks-logos/',
-            brandsLogosPath: '../../../node_modules/cardinfo/dist/brands-logos/',
+            banksLogosPath: '../../../node_modules/card-info/dist/banks-logos/',
+            brandsLogosPath: '../../../node_modules/card-info/dist/brands-logos/',
           });
           console.log(cardInfo.bankName);
           console.log(cardInfo.bankLogo);
@@ -137,6 +137,7 @@
     position: absolute;
   }
   .cardimage {
+    background: url('../../../node_modules/card-info/dist/banks-logos/ru-otp.svg');
     height: 60px;
     width: 400px;
     position: absolute;

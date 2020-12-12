@@ -26,11 +26,11 @@
             currency: null
         }),
         methods: {
-          async logout() {
-              await this.$store.dispatch('logout')
-              this.$router.push('/entry')
-              localStorage.setItem('userAuth', 'no');
-          }
+            async logout() {
+                await this.$store.dispatch('logout')
+                this.$router.push('/entry')
+                localStorage.setItem('userAuth', 'no');
+            }
         },
 
 
@@ -39,8 +39,8 @@
                 await this.$store.dispatch('fetchInfo')
             }
             this.loading = false
-
         },
+
         name: "Profile",
         components: {UserProfile, Footer,Header}
     }

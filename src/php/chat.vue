@@ -26,13 +26,13 @@
 
     methods : {
       lol () {
-        var message = document.querySelector('.message');
-        var btn = document.querySelector('button');
-        var panel = document.querySelector('.panel');
+        const message = document.querySelector('.message');
+        const btn = document.querySelector('button');
+        const panel = document.querySelector('.panel');
 
         // var conn = new WebSocket('ws://127.0.0.1:8777');
         const conn = this.connection;
-        console.log(conn, 'ocnmn');
+        console.log(conn, 'conn');
         // console.log(this.connection, 'conn');
         conn.onopen = function() {
           console.log("Connection established!");
@@ -44,8 +44,8 @@
         };
         //---------------------------
         btn.onclick = function(){
-          var msg = message.value;
-          console.log(this.connection, 'aalllo');
+          const msg = message.value;
+          console.log(this.connection, 'error');
           conn.send(msg);
           console.log(msg);
         }

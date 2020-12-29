@@ -1,5 +1,7 @@
 # mafiavuejs
 
+https://mol0d337.github.io/Mafia/
+
 ## Project setup
 ```
 yarn install
